@@ -5,7 +5,6 @@ const links = [
   { to: "/", label: "Home", end: true },
   { to: "/services", label: "Services" },
   { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact" },
 ];
 
 function navClass({ isActive }) {
@@ -86,13 +85,13 @@ export default function Layout() {
               </NavLink>
             ))}
             <NavLink
-              to="/start-a-project"
+              to="/contact"
               onClick={close}
               className={({ isActive }) =>
                 `group mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 text-[15px] font-extrabold text-white shadow-[0_8px_18px_rgba(241,90,34,0.28)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_22px_rgba(241,90,34,0.34)] md:mt-0 md:ml-1 ${isActive ? "bg-brand-deep" : "bg-brand hover:bg-brand-deep"}`
               }
             >
-              Start a Project
+              Contact Us
               <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-0.5">
                 →
               </span>
@@ -121,7 +120,7 @@ export default function Layout() {
               <ul className="grid gap-2">
                 <li><Link to="/services" className="transition-colors hover:text-white">Services</Link></li>
                 <li><Link to="/about" className="transition-colors hover:text-white">About Us</Link></li>
-                <li><Link to="/start-a-project" className="transition-colors hover:text-white">Start a Project</Link></li>
+                <li><Link to="/contact" className="transition-colors hover:text-white">Contact Us</Link></li>
                 <li><Link to="/privacy" className="transition-colors hover:text-white">Privacy Policy</Link></li>
               </ul>
             </div>

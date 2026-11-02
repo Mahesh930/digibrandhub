@@ -58,8 +58,8 @@ export default function Services() {
             <h2 className="font-serif text-4xl tracking-tight">Ready to build what comes next?</h2>
           </Reveal>
           <Reveal delay={100}>
-            <Link to="/start-a-project" className="inline-flex min-h-[52px] items-center rounded-lg bg-brand px-5 font-extrabold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-brand-deep">
-              Start a project →
+            <Link to="/contact" className="inline-flex min-h-[52px] items-center rounded-lg bg-brand px-5 font-extrabold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-brand-deep">
+              Contact Us →
             </Link>
           </Reveal>
         </div>

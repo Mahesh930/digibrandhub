@@ -57,10 +57,10 @@ export default function Home() {
           </p>
           <div className="rise mt-9 flex flex-wrap gap-3 [animation-delay:480ms]">
             <Link
-              to="/start-a-project"
+              to="/contact"
               className="inline-flex min-h-[52px] items-center rounded-lg bg-brand px-5 font-extrabold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-brand-deep"
             >
-              Start a project →
+              Contact Us →
             </Link>
             <Link
               to="/services"
