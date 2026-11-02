@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --color-navy: #071426;
+  --color-navy-soft: #10243d;
+  --color-ink: #122033;
+  --color-muted: #5b6b7c;
+  --color-brand: #f15a22;
+  --color-brand-deep: #d44b16;
+  --color-paper: #f6f3ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-brand) 55%, transparent);
+  outline-offset: 2px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes glow-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-36px, 28px, 0) scale(1.08);
+  }
+}
+
+@keyframes scroll-cue {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.glow-drift {
+  animation: glow-drift 16s ease-in-out infinite;
+}
+
+.scroll-cue {
+  animation: scroll-cue 1.6s ease-in-out infinite;
+}
+
+.menu-in {
+  animation: menu-in 0.28s ease both;
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-in {
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.frame-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.frame-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, 0.16) 50%, transparent 68%);
+  transform: translateX(-130%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+
+.frame-card:hover::after {
+  transform: translateX(130%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .rise,
+  .glow-drift,
+  .scroll-cue,
+  .menu-in,
+  .reveal.is-in {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+  }
+
+  .frame-card::after {
+    display: none;
+  }
+}
